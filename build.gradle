@@ -1,0 +1,28 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.8'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.jtf'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	// https://mvnrepository.com/artifact/junit/junit
+	testImplementation 'junit:junit:4.13.2'
+	// https://mvnrepository.com/artifact/org.powermock/powermock-module-junit4
+	testImplementation 'org.powermock:powermock-module-junit4:1.6.4'
+	// https://mvnrepository.com/artifact/org.powermock/powermock-api-mockito
+	testImplementation 'org.powermock:powermock-api-mockito:1.6.4'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
